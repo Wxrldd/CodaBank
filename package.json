@@ -9,6 +9,7 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
     "@types/prompts": "^2.4.9",
     "typescript": "^5.7.2"
   },

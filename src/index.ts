@@ -1,7 +1,9 @@
 import prompt from "prompts";
 import { CLI } from "./CLI";
 import { login } from "./User/login";
-import { deposit, withdrawal } from "./Gestion/transactions";
+import { deposit } from "./Account/Transactions/deposit";
+import { withdrawal } from "./Account/Transactions/withdrawal";
+import { displayTenOperation } from "./Account/Historique/operation";
 
 const startupParts = [
   "   __________  ____  ___       ____  ___    _   ____ __",
@@ -55,6 +57,21 @@ const cli = new CLI([
       }
     },
   },
+  {
+    title: "Voir l'historique des transactions",
+    value: "view_history",
+    action: () => {
+      displayTenOperation();
+    },
+  },
+  {
+    title: "Voir le solde de mon compte",
+    value: "view_solde",
+    action: () => {
+      console.log(`Votre solde actuel est de : ${account}€`);
+    }
+  },
+  
 ]);
 cli.menu();
 }
